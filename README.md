@@ -58,7 +58,7 @@ NGINX ha quedado configurado con htpps y con el certificado, para verificar pued
 ## 4.- Generación de JKS en formato PKCS12
 En muchas ocaciones, se necesita el certificado no para desplegar servicios con nginx si con servidores java como *JBoss* *Wildfly* o microservicios con Spring Boot y para ello los certificados se los debe colocar en almacen de claves JKS o PKCS12. Crear un PKCS12 con los certificados generado por **certbot** ejecute el siguiente comando.  
 
-    # openssl pkcs12 -export -out mi.dominio.com.p12 -inkey privkey.pem -in cert.pem -certfile 
+    # openssl pkcs12 -export -out mi.dominio.com.p12 -inkey privkey.pem -in cert.pem -certfile fullchain.pem
 Al ejecutar el comando la herramienta openssl le solicitará una contraseña para el almacen de claves, el mismo debe anotarlo puesto que se requiere para configurar el servidor de aplicaciones. 
 Los certificados se han guardado en el almacen de claves bajo el alias **1** que será necesario para configurar en el servidor de aplicaciones.
 
